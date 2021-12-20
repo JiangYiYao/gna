@@ -9,6 +9,13 @@ Gna 是一个可以在多台电脑间共享剪切板的工具，支持mac、linu
 
 # How to use
 
+运行在linux上需要x11环境，建议先按如下命令安装x11环境
+
+```
+sudo apt-get install xorg-dev
+sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
+```
+
 server模式：
 
 ```
