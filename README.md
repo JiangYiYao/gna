@@ -24,9 +24,9 @@ chmod 777 ~/Downloads/gna
 mv ~/Downloads/gna /usr/local/bin/gna
 ```
 
-完成以上设置后，在命令行中输入gna就可以直接执行程序，如果在mac系统上第一次运行gna被拦截，需要去"系统偏好设置->安全性与隐私"中允许gna执行，gna的使用命令有如下3种
+完成以上设置后，在命令行中输入gna就可以直接执行程序，如果在mac系统上第一次运行gna被拦截，需要去"系统偏好设置->安全性与隐私"中允许gna执行，gna的使用命令有如下3种：
 
-After completing the above settings, you can directly execute the program by typing gna in the command line. If gna is intercepted the first time you run it on a mac system, you need to go to "System Preferences->Security and Privacy" to allow gna to execute.
+After completing the above settings, you can directly execute the program by typing gna in the command line. If gna is intercepted the first time you run it on a mac system, you need to go to "System Preferences->Security and Privacy" to allow gna to execute. There are 3 commands for using gna as follows:
 
 ```
 gna
