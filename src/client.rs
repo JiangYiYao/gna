@@ -4,8 +4,6 @@ use super::clipboard;
 use message_io::network::{NetEvent, Transport};
 use message_io::node::{self, NodeEvent};
 use std::time::{Duration};
-use notify_rust::Notification;
-
 
 pub fn run(server_addr: &String, uid: &String) {
     let (handler, listener) = node::split();
@@ -79,14 +77,7 @@ pub fn run(server_addr: &String, uid: &String) {
                 handler.network().send(remote_id, &output_data);
             }
             Signal::SendClipboardImage => {
-                match Notification::new()
-                .summary("Gna Notification")
-                .appname("Gna")
-                .body("may cost a litte time to send image, please wait a moment")
-                .show() {
-                    Ok(_) => {}
-                    Err(_) => {println!{"Fail to use notification"}}
-                }
+                println!("May cost a litte time to send an image, please wait a moment");
                 let request = Message { category: 2, dimension: 2, 
                     dimension_data: vec![last_image.width, last_image.height], content_data: last_image.clone().bytes.to_vec()};
                 let output_data = bincode::serialize(&request).unwrap();

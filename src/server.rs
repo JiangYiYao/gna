@@ -10,7 +10,6 @@ use std::io;
 use std::error::Error;
 use serde::{Serialize, Deserialize};
 use std::time::{Duration};
-use notify_rust::Notification;
 
 struct ClientInfo {
     is_auth: bool,
@@ -69,7 +68,7 @@ pub fn run(server_addr: &String, uid: &String) {
                             let output_data = bincode::serialize(&response).unwrap();
                             handler.network().send(endpoint, &output_data);
                         } else {
-                            println!("Client [uid:{} addr:{}] wants to connect, accept it? (y/n)", client_uid, endpoint.addr());
+                            println!("Client [uid:{} addr:{}] wants to join, accept it? (y/n)", client_uid, endpoint.addr());
                             loop {
                                 let mut choice = String::new();
                                 io::stdin().read_line(&mut choice).unwrap();
@@ -179,14 +178,7 @@ pub fn run(server_addr: &String, uid: &String) {
                 }
             }
             Signal::SendClipboardImage => {
-                match Notification::new()
-                .summary("Gna Notification")
-                .appname("Gna")
-                .body("may cost a litte time to send image, please wait a moment")
-                .show() {
-                    Ok(_) => {}
-                    Err(_) => {println!{"Fail to use notification"}}
-                }
+                println!("May cost a litte time to send an image, please wait a moment");
                 let request = Message { category: 2, dimension: 2, 
                     dimension_data: vec![last_image.width, last_image.height], content_data: last_image.clone().bytes.to_vec()};
                 let output_data = bincode::serialize(&request).unwrap();
