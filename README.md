@@ -1,5 +1,5 @@
 # Gna
-Gna is a tool to share clipboard over multi computers, support mac linux windows
+Gna is a tool for sharing clipboards on multiple computers and supports Mac, Linux and Windows.
 
 
 # How to use
