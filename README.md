@@ -1,5 +1,6 @@
 # Gna
 Gna是一个在多台电脑上共享剪贴板的工具，支持Mac、Linux和Windows。
+
 Gna is a tool for sharing clipboards on multiple computers and supports Mac, Linux and Windows.
 
 
