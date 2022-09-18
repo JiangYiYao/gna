@@ -1,11 +1,6 @@
 # Gna
-Gna is a tool to share clipboard over multi computers
+Gna is a tool to share clipboard over multi computers, support mac linux windows
 
-Gna 是一个可以在多台电脑间共享剪切板的工具，支持mac、linux、windows。
-
-请注意gna在传输数据时没有使用任何加密措施（建议仅在局域网使用），不要用其在公共网络传输私密数据！！！
-
-名称来源：盖娜，Gna、Gná。在北欧神话中，是“风”的化身，奥丁妻子弗丽嘉的仕女之一，主要的工作是作为弗丽嘉的信使。
 
 # How to use
 
