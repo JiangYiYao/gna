@@ -1,7 +1,8 @@
-# 中文
-## Gna
+[中文](#如何使用) [English](#how-to-use)
+# Gna
 Gna是一个可以在多台电脑之间共享剪切板中文字和图片的工具，使用上类似于苹果设备间的接力，目前支持Linux、Mac和Windows设备之间进行跨平台通信。
 
+Gna is a tool that allows you to share text and images in the clipboard between multiple computers, similar in use to the handoff between Apple devices, and currently supports cross-platform communication between Linux, Mac and Windows devices.
 
 ## 如何使用
 ### 准备工作
@@ -66,11 +67,6 @@ gna -c 192.168.10.2:8888
 // 会让gna直接以上次运行的命令再次运行
 gna
 ```
-
-
-# English
-## Gna
-Gna is a tool that allows you to share text and images in the clipboard between multiple computers, similar in use to the handoff between Apple devices, and currently supports cross-platform communication between Linux, Mac and Windows devices.
 
 
 ## How to use
