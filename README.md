@@ -10,7 +10,7 @@ Gna是一个可以在多台电脑之间共享剪切板中文字和图片的工�
 sudo apt-get install xorg-dev
 sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
 ```
-2.从网页右侧的"releases"中下载对应平台的压缩包并解压得到二进制文件"gna"。以Mac平台为例，可以执行以下命令方便后续使用
+2.从网页右侧的"Releases"中下载对应平台的压缩包并解压得到二进制文件"gna"。以Mac平台为例，可以执行以下命令方便后续使用
 ```
 chmod +x ~/Downloads/mac-v1.1.1/gna
 mv ~/Downloads/mac-v1.1.1/gna /usr/local/bin/gna
@@ -80,7 +80,7 @@ Gna is a tool that allows you to share text and images in the clipboard between 
 sudo apt-get install xorg-dev
 sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
 ```
-2.Download the zip file for your platform from "releases" on the right side of the page and unzip it to get the binary file "gna". For Mac platform, for example, you can execute the following commands for further use
+2.Download the zip file for your platform from "Releases" on the right side of the page and unzip it to get the binary file "gna". For Mac platform, for example, you can execute the following commands for further use
 ```
 chmod +x ~/Downloads/mac-v1.1.1/gna
 mv ~/Downloads/mac-v1.1.1/gna /usr/local/bin/gna
