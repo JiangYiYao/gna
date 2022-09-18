@@ -15,13 +15,13 @@ sudo apt-get install xorg-dev
 sudo apt install libxcb-shape0-dev libxcb-xfixes0-dev
 ```
 
-从release中下载对应平台的二进制文件"gna"，然后执行以下命令给gna可执行权限，并放入/usr/local/bin目录
+从release中下载对应平台的压缩文件并解压，然后执行类似如下命令给gna可执行权限，并放入/usr/local/bin目录
 
-Download the platform-specific binary "gna" from the release, then execute the following command to give gna executable permissions and place it in the /usr/local/bin directory
+Download the platform-specific zip file from the release and extract it, then execute a command like the following to give gna executable permissions and place it in the /usr/local/bin directory
 
 ```
-chmod 777 ~/Downloads/gna
-mv ~/Downloads/gna /usr/local/bin/gna
+chmod 777 ~/Downloads/mac-v1.1.1/gna
+mv ~/Downloads/mac-v1.1.1/gna /usr/local/bin/gna
 ```
 
 完成以上设置后，在命令行中输入gna就可以直接执行程序，如果在mac系统上第一次运行gna被拦截，需要去"系统偏好设置->安全性与隐私"中允许gna执行，gna的使用命令有如下3种：
