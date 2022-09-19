@@ -18,40 +18,6 @@ mv ~/Downloads/mac-v1.1.1/gna /usr/local/bin/gna
 ```
 完成以上设置后，在命令行中输入gna就可以直接执行程序，如果在Mac上第一次运行gna被拦截，需要去"系统偏好设置->安全性与隐私"中允许gna执行
 
-3.如果在linux上以server模式运行gna，可以考虑按如下方法配置开机自启动
-```
-touch startup_gna.sh
-touch /lib/systemd/system/startup_gna.service
-```
-startup_gna.sh的内容如下
-```
-#!/usr/bin/env bash
-# Filename: startup_gna.sh
-cd ~
-gna -p 8888
-```
-startup_gna.service的内容如下
-```
-[Unit]
-Description=Startup Gna
-After=network.target
-Wants=network.target
-
-[Service]
-#需要替换成你创建的startup_gna.sh的绝对路径
-ExecStart=/.../startup_gna.sh
-ExecStop=/bin/kill $MAINPID
-Restart=3
-
-[Install]
-WantedBy=multi-user.target
-```
-编辑完startup_gna.sh和startup_gna.service后，再执行如下命令即可完成开机自启动设置
-```
-chmod +x startup_gna.sh
-systemctl enable startup_gna.service --now
-```
-
 ### 命令参数
 
 <img width="648" alt="image" src="https://user-images.githubusercontent.com/34652804/190914474-22b0bd28-194e-4ac7-8968-c2453a9d3b73.png">
@@ -82,40 +48,6 @@ chmod +x ~/Downloads/mac-v1.1.1/gna
 mv ~/Downloads/mac-v1.1.1/gna /usr/local/bin/gna
 ```
 After completing the above settings, you can execute the program directly by typing gna in the command line. If gna is intercepted the first time you run it on Mac, you need to go to "System Preferences->Security and Privacy" to allow gna to execute.
-
-3.If you are running gna in server mode on linux, you can consider configuring the boot-up as follows
-```
-touch startup_gna.sh
-touch /lib/systemd/system/startup_gna.service
-```
-The contents of startup_gna.sh are as follows
-```
-#!/usr/bin/env bash
-# Filename: startup_gna.sh
-cd ~
-gna -p 8888
-```
-The contents of startup_gna.service are as follows
-```
-[Unit]
-Description=Startup Gna
-After=network.target
-Wants=network.target
-
-[Service]
-# need to replace with the absolute path of the startup_gna.sh you created
-ExecStart=/.../startup_gna.sh
-ExecStop=/bin/kill $MAINPID
-Restart=3
-
-[Install]
-WantedBy=multi-user.target
-```
-After editing startup_gna.sh and startup_gna.service, execute the following commands to complete the boot-up setup
-```
-chmod +x startup_gna.sh
-systemctl enable startup_gna.service --now
-```
 
 ### Command parameters
 
