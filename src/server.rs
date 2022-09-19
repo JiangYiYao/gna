@@ -10,6 +10,7 @@ use std::io;
 use std::error::Error;
 use serde::{Serialize, Deserialize};
 use std::time::{Duration};
+use arboard::Clipboard;
 
 struct ClientInfo {
     is_auth: bool,
@@ -39,8 +40,9 @@ pub fn run(server_addr: &String, uid: &String) {
         Err(_) => {}
     }
 
-    let mut last_text = clipboard::get_text();
-    let mut last_image = clipboard::get_image();
+    let mut ctx = Clipboard::new().unwrap();
+    let mut last_text = clipboard::get_text(&mut ctx);
+    let mut last_image = clipboard::get_image(&mut ctx);
 
     handler.signals().send(Signal::CheckClipboard);
 
@@ -113,7 +115,7 @@ pub fn run(server_addr: &String, uid: &String) {
                                 } else {
                                     let remote_text = String::from_utf8(message.content_data).unwrap();
                                     if remote_text.ne(&last_text) {
-                                        clipboard::set_text(&remote_text);
+                                        clipboard::set_text(&mut ctx, &remote_text);
                                     }
                                 }
                             }
@@ -135,7 +137,7 @@ pub fn run(server_addr: &String, uid: &String) {
                                 } else {
                                     let remote_image_content = message.content_data;
                                     if remote_image_content != last_image.bytes.to_vec().clone() {
-                                        clipboard::set_image(message.dimension_data[0], message.dimension_data[1], &remote_image_content);
+                                        clipboard::set_image(&mut ctx, message.dimension_data[0], message.dimension_data[1], &remote_image_content);
                                     }
                                 }
                             }
@@ -156,7 +158,7 @@ pub fn run(server_addr: &String, uid: &String) {
         },
         NodeEvent::Signal(signal) => match signal {
             Signal::CheckClipboard => {
-                match clipboard::sync_clipboard_data_change(&mut last_text, &mut last_image) {
+                match clipboard::sync_clipboard_data_change(&mut ctx, &mut last_text, &mut last_image) {
                     clipboard::Change::TextChange => {
                         handler.signals().send(Signal::SendClipboardText);
                     }
